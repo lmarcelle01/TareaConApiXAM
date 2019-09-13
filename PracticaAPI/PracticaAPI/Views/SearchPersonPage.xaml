@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PracticaAPI.Views.SearchPlacePage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout >
+                <Entry HorizontalOptions="CenterAndExpand" Placeholder="Escribe el lugar que buscas" Text="{Binding Candidate.Name}" ></Entry>
+                <Button HorizontalOptions="Center" Text="Buscar" 
+                    BackgroundColor="CornflowerBlue"  
+                    Command="{Binding  GetPersonCommand, Mode=TwoWay}"/>
+
+
+                <Label Text="{Binding Candidate.Rating, StringFormat='Rating: {0}'}"/>
+                <Label Text="{Binding Candidate.formatted_address, StringFormat='Direccion: {0}'}"></Label>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
